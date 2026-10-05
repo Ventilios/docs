@@ -120,7 +120,7 @@ flowchart TB
 
 This is a one-off setup, owned by the Azure Platform Team.
 
-- **Subscription design:** use dedicated subscription(s) for Fabric, for example one for *Prod* and one for *Non-Prod*. Use resource groups per region or business unit. Avoid scattering capacities across application subscriptions.
+- **Subscription design:** align with the organisation's own Azure landing zone strategy and with how cost and ownership are organised internally, for example by environment (Prod and Non-Prod) or by business unit. A common pattern is dedicated Fabric subscription(s) with resource groups per region or business unit. Whatever the pattern, avoid scattering capacities across application subscriptions.
 - **Naming convention:** the Azure resource name allows lowercase letters and digits only (no hyphens), must start with a letter and be 3 to 63 characters, for example `fc<region><bu><env><nn>` (such as `fcweusupplychainprd01`). A Fabric capacity cannot be renamed, so a name change means a new capacity and a workspace move. Get the convention right before the first deployment.
 - **Mandatory tags:** `CostCenter`, `BusinessOwner`, `CapacityOwner`, `Environment`, `DataClassification`, `Archetype`.
 - **Azure Policy:**
